@@ -97,7 +97,7 @@ async function playerTurn() {
 function botTurn() {
 	let selectedCard;
 	const rSuits = _.shuffle(suits);
-	const handLowest = _.sortBy(bot.hand, [card => ranks.indexOf(card.rank), card => rSuits.indexOf(card.suit)]);
+	const handLowest = _.sortBy(bot.hand, [card => ranks.indexOf(card.rank), card => card.suit !== trumpCard.suit, card => rSuits.indexOf(card.suit)]);
 	if (!currentCard) {
 		selectedCard = handLowest[0];
 	}
@@ -197,9 +197,9 @@ async function playGame() {
 	}
 
 	if (player.hand.length === 0) {
-		console.log('Вы выиграли!');
+		console.log('Бот дурак!');
 	} else {
-		console.log('Бот выиграл!');
+		console.log('Вы дурак!');
 	}
 }
 
