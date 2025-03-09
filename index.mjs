@@ -161,7 +161,7 @@ function take(move) {
 			i++;
 		}
 		if (i > 0)
-			console.log(p === player ? `Вы взяли ${i} карт` : `Бот взял ${i} карт`);
+			console.log(p === player ? `Вы взяли ${i} карт в рот` : `Бот взял ${i} карт в рот`);
 	}
 }
 
